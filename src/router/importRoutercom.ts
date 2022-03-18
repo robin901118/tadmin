@@ -8,7 +8,9 @@ export function filterAsnycRouter(asyncRouterMap: Array<any>) {
 			route.component = () => import('@/layout/full.vue')
 		} else {
 			route.path = `${route.path}`
-			route.component = resolveComponent(route.component)
+			const comp = resolveComponent(route.component)
+			if (comp === '') return
+			route.component = ''
 		}
 		if (route.children !== null && route.children && route.children.length) {
 			route.children = filterAsnycRouter(route.children)
