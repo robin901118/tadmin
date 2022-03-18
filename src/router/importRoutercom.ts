@@ -10,7 +10,7 @@ export function filterAsnycRouter(asyncRouterMap: Array<any>) {
 			route.path = `${route.path}`
 			const comp = resolveComponent(route.component)
 			if (comp === '') return
-			route.component = ''
+			route.component = comp
 		}
 		if (route.children !== null && route.children && route.children.length) {
 			route.children = filterAsnycRouter(route.children)
