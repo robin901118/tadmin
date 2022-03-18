@@ -22,7 +22,6 @@ declare module 'mockjs'
 declare module 'nprogress'
 
 // 拓展类型
-declare type RulesType = { [property: string]: Array<any> }
 declare type HTTPFunction<T, U = any> = (data?: U) => Promise<T>
 declare type ListData<T> = { list: T; total: number }
 declare type TableData = { size: number; page: number }
