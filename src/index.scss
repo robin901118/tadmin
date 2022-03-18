@@ -1,0 +1,264 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body,
+div,
+span,
+object,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+address,
+cite,
+del,
+em,
+img,
+q,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+form,
+label,
+table,
+tr,
+th,
+td,
+caption,
+tbody,
+tfoot,
+thead,
+article,
+aside,
+details,
+summary,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+audio,
+input,
+select,
+textarea,
+sub,
+sup,
+button {
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: antialiased;
+	outline: none;
+	/* line-height: 1; */
+}
+html {
+	width: 100%;
+	height: 100%;
+}
+body {
+	position: relative;
+	min-height: 100%;
+}
+input {
+	-webkit-appearance: none;
+}
+
+/*自定义进度条颜色*/
+#nprogress .bar {
+	background: #92e7c5 !important;
+}
+
+/*通用样式*/
+.flexJustify {
+	@apply tadmin-flex tadmin-items-center tadmin-justify-between;
+}
+.flexCenter {
+	@apply tadmin-flex tadmin-items-center tadmin-justify-center;
+}
+.cardTitle {
+	@apply tadmin-font-normal tadmin-text-333 tadmin-text-18 dark:tadmin-text-white;
+}
+//美化滚动条
+.beautyScroll {
+	&::-webkit-scrollbar-track-piece {
+		//滚动条凹槽的颜色，还可以设置边框属性
+		background-color: #ededed;
+	}
+
+	&::-webkit-scrollbar {
+		//滚动条的宽度
+		width: 8px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		//滚动条的设置
+		background-color: #c9cdd4;
+		background-clip: padding-box;
+		border-radius: 500px;
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: #7c7e86;
+	}
+}
+
+/*全局覆盖element样式*/
+.el-table thead th.el-table__cell {
+	background-color: #f2f3f5;
+	font-weight: normal;
+	color: #333;
+}
+.el-pager li.active {
+	@apply tadmin-bg-lightBlue;
+}
+.el-select-dropdown__item {
+	padding: 0;
+	> span {
+		padding: 0 32px 0 20px;
+	}
+}
+.select-trigger .el-input__validateIcon {
+	display: none;
+}
+.el-menu-item.is-active {
+	background: var(--el-color-primary-light-9);
+}
+.el-color-picker__trigger {
+	border: 1px solid var(--el-border-color-base);
+}
+.el-menu {
+	--el-menu-bg-color: white;
+}
+.el-tabs__content {
+	@extend .beautyScroll;
+}
+.el-sub-menu .el-menu {
+	background: #fdfdfd;
+}
+.el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+	background: #fff;
+}
+.el-menu--popup,
+.el-dropdown-menu {
+	padding: 4px;
+}
+.el-sub-menu .el-menu-item,
+.el-sub-menu__title,
+.el-menu--popup .el-menu-item,
+.el-dropdown-menu__item {
+	border-radius: 4px;
+}
+
+/*全局覆盖vue3-menus样式*/
+.v3-menus-active,
+.v3-menus-item:hover {
+	background: var(--el-color-primary-light-9);
+	color: var(--el-color-primary);
+}
+
+/*暗黑模式变量*/
+@mixin darkModule {
+	--el-border-color-base: #1f2739;
+	--el-border-color-light: #1f2739;
+	--el-color-white: #0f172a;
+	--el-text-color-regular: white;
+	--el-color-primary-light-9: rgba(255, 255, 255, 0.1);
+	--el-text-color-primary: white;
+	--el-bg-color: #1f2739;
+	--el-border-color-lighter: #1f2739;
+	.el-pager li.active {
+		background: #1f2739;
+	}
+	.el-button--danger,
+	.el-button--primary,
+	.el-button--success {
+		--el-color-white: white;
+	}
+	.el-menu {
+		--el-menu-bg-color: transparent;
+		--el-menu-text-color: white;
+	}
+	.el-backtop {
+		--el-backtop-bg-color: #323f5e;
+	}
+	.el-table thead th.el-table__cell {
+		background-color: #48597b;
+		color: white;
+	}
+	.el-table {
+		--el-table-border-color: #1f2739;
+		--el-table-row-hover-bg-color: #1f2739;
+	}
+	.el-radio-button__inner {
+		border-color: #3f5579;
+	}
+	.el-radio-button:first-child .el-radio-button__inner {
+		border-left: 1px solid #3f5579;
+	}
+	.el-loading-mask {
+		background: rgba(0, 0, 0, 0.4);
+	}
+	.el-popover {
+		--el-popover-border-color: #1f2739;
+	}
+	.el-dropdown-menu {
+		background: #1f2739;
+		border-radius: 0;
+	}
+	.el-input .el-input__count .el-input__count-inner,
+	.el-divider__text,
+	.el-range-editor .el-range-input {
+		background: transparent;
+	}
+	.el-input-group__append,
+	.el-input-group__prepend {
+		border-color: transparent;
+	}
+	.el-picker-panel {
+		background: var(--el-border-color-light);
+	}
+	.el-tabs--border-card {
+		background: #1f2739;
+	}
+	.el-tabs--border-card > .el-tabs__header {
+		--el-bg-color: #0f172a;
+	}
+	.el-sub-menu .el-menu {
+		background: #1f2739;
+	}
+	.el-table__body-wrapper tr td.el-table-fixed-column--left,
+	.el-table__body-wrapper tr td.el-table-fixed-column--right,
+	.el-table__footer-wrapper tr td.el-table-fixed-column--left,
+	.el-table__footer-wrapper tr td.el-table-fixed-column--right,
+	.el-table__header-wrapper tr td.el-table-fixed-column--left,
+	.el-table__header-wrapper tr td.el-table-fixed-column--right {
+		background: #0f172a;
+	}
+	.el-tabs--border-card > .el-tabs__header .el-tabs__item.is-active {
+		background: #1f2739;
+	}
+}
+:root.tadmin-dark {
+	@include darkModule;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		@include darkModule;
+	}
+}
